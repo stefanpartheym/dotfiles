@@ -1,0 +1,41 @@
+[core]
+    editor = nvim
+    pager = delta
+    quotepath = false
+
+[user]
+    email = @git.email@
+    name = @git.name@
+
+[init]
+    defaultBranch = main
+
+[diff]
+    tool = meld
+    colorMoved = default
+
+[merge]
+    conflictstyle = diff3
+
+[interactive]
+    diffFilter = delta --color-only
+
+[http]
+    sslverify = false
+
+[alias]
+    unstage = reset HEAD
+
+[gui]
+    spellingdictionary = none
+    tabsize = 4
+    fontui = -family \"Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family \"Hack\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+
+[delta]
+    navigate = true
+    dark = true
+    syntax-theme = OneHalfDark
+
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret

@@ -1,0 +1,23 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$directory$character"""
+right_format = """$all"""
+add_newline = false
+
+[character]
+success_symbol = '[❯](bold purple)'
+error_symbol = '[❯](bold red)'
+
+[directory]
+read_only = ' '
+
+[cmd_duration]
+format = '\($duration\) '
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[zig]
+symbol = ' '
+format = '[$symbol($version )]($style)'
+detect_files = ['.zigversion']
