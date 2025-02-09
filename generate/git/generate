@@ -4,7 +4,7 @@ project_path=.
 template_path=$(dirname "$0")
 output_path=$project_path/packages
 
-source $project_path/generate/utils.sh
+source $project_path/utils.sh
 
 #---
 
