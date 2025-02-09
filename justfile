@@ -13,7 +13,7 @@ default:
   just -l
 
 # Install all packages
-install:
+install: generate
   stow .
 
 # Uninstall all packages
