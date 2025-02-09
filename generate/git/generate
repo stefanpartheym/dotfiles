@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
-cwd=$(dirname "$0")
+project_path=.
+template_path=$(dirname "$0")
+output_path=$project_path/packages
 
-source ${cwd}/../utils.sh
-
-template_path=$cwd
-output_path="$template_path/../.."
+source $project_path/generate/utils.sh
 
 #---
 

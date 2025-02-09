@@ -1,14 +1,6 @@
+--dir=./packages
 --target=~
 --dotfiles
-
-# Ignore project specific files
---ignore=.stowrc
---ignore=.git
---ignore=.gitignore
---ignore=.editorconfig
---ignore=README.md
---ignore=_generate
---ignore=justfile
 
 # Ignore packages
 --ignore=.config/kitty
