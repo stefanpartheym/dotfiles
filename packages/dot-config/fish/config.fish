@@ -75,41 +75,11 @@ if type -q fzf
     fzf --fish | source
 end
 
-# Tmux
-if type -q tmux
-    # Create or attach to the default session
-    function td --description 'Open tmux default session'
-        set -l session_name default
-        if tmux ls 2>/dev/null | cut -d ':' -f 1 | grep -qE "^$session_name\$"
-            tmux attach -t "$session_name"
-        else
-            tmux new -s "$session_name"
-        end
-    end
-end
-
 # Zoxide
 if type -q zoxide
     # Initialize zoxide.
     # HINT: Use flag `--no-cmd` to init without creating `z` and `zi` aliases.
     zoxide init fish | source
-end
-
-# Zellij
-if type -q zellij
-    # Setup command to attach to defeault session.
-    alias zd="zellij a -c default"
-    # Setup function to launch a zellij session in the current working directory.
-    function zell \
-        -a layout \
-        -d 'start zellij in current working directory and set session name accordingly'
-        set -l session_name $(basename $(pwd))
-        if test -z "$layout"
-            zellij -s $session_name
-        else
-            zellij -s $session_name -l $layout
-        end
-    end
 end
 
 #
