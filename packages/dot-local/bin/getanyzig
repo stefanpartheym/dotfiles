@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+set -e
+
+prefix="$HOME/.local"
+bootstrap_zig_version="zig-linux-x86_64-0.14.0"
+bootstrap_zig_url="https://ziglang.org/download/0.14.0/$bootstrap_zig_version.tar.xz"
+bootstrap_zig_build_dir="/tmp/zig-build"
+anyzig_url="https://github.com/marler8997/anyzig.git"
+build_dir="/tmp/anyzig-build"
+
+echo "## getanyzig ##"
+
+echo "Installing bootstrap zig compiler"
+
+
+rm -rf $bootstrap_zig_build_dir
+mkdir -p $bootstrap_zig_build_dir
+curl -L "$bootstrap_zig_url" | tar xJ -C $bootstrap_zig_build_dir
+
+echo "Installing anyzig to: $prefix"
+
+mkdir -p $prefix
+
+rm -rf $build_dir
+git clone $anyzig_url $build_dir
+pushd $build_dir
+PATH=$bootstrap_zig_build_dir/$bootstrap_zig_version:$PATH zig build install -p $prefix
+popd
