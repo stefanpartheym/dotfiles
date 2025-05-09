@@ -6,9 +6,6 @@
 
 source ./utils.sh
 
-test -f ./.env && source ./.env
-test -z "$DOT_ENVIRONMENT" && DOT_ENVIRONMENT="desktop"
-
 #-------------------------------------------------------------------------------
 
 # Specific for linux systems:
@@ -67,21 +64,14 @@ info "Installing glow (markdown viewer)"
 $PKG_INSTALL glow
 result
 
-# Conditionally install software in `server` and `desktop` environments.
-if [ "$DOT_ENVIRONMENT" == "server" ]; then
-  info "Installing tmux"
-  $PKG_INSTALL tmux
-  result
-else
-  info "Installing zellij"
-  $PKG_INSTALL zellij
-  result
+info "Installing zellij"
+$PKG_INSTALL zellij
+result
 
-  info "Installing starship prompt"
-  $PKG_INSTALL starship
-  result
+info "Installing starship prompt"
+$PKG_INSTALL starship
+result
 
-  info "Installing pass (password-store)"
-  $PKG_INSTALL pass pass-otp pass-ln browserpass browserpass-chromium
-  result
-fi
+info "Installing pass (password-store)"
+$PKG_INSTALL pass pass-otp pass-ln browserpass browserpass-chromium
+result
