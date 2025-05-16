@@ -1,0 +1,12 @@
+prompt=
+mode=drun
+term=ghostty
+matching=fuzzy
+allow_markup=false
+allow_images=false
+hide_scroll=true
+insensitive=true
+no_actions=true
+key_up=Ctrl-p
+key_down=Ctrl-n
+location=center
