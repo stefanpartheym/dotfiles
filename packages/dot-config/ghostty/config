@@ -1151,7 +1151,7 @@ keybind = ctrl+shift+c=copy_to_clipboard
 keybind = ctrl+shift+q=quit
 keybind = ctrl+shift+n=new_window
 keybind = ctrl+shift+page_down=jump_to_prompt:1
-keybind = ctrl+shift+comma=reload_config
+keybind = ctrl+shift+.=reload_config
 keybind = ctrl+minus=decrease_font_size:1
 keybind = shift+left=adjust_selection:left
 keybind = super+ctrl+shift+up=resize_split:up,10
