@@ -1,1 +1,4 @@
 /packages/dot-gitconfig
+/packages/dot-config/fish/*
+!/packages/dot-config/fish/config.fish
+!/packages/dot-config/fish/fish_plugins
