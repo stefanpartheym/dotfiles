@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+#
+# Activate/deactivate internal monitor based on laptop lid state.
+#
+
+# Get the name of the internal monitor (usually eDP-X).
+fallback_monitor_name="eDP-1"
+monitor_name="$(hyprctl monitors all | grep '^Monitor eDP' | awk '{print $2}')"
+
+# Get current lid state.
+lid_state=$(
+  cat /proc/acpi/button/lid/LID0/state | \
+    cut -d ':' -f 2 | \
+    sed 's/ //g'
+)
+
+# Activate or deactivate the internal monitor based on current lid state.
+if [ "$lid_state" = "open" ]; then
+  hyprctl keyword monitor "$monitor_name, preferred, auto, auto"
+  action="Activating"
+else
+  hyprctl keyword monitor "$monitor_name, disable"
+  action="Deactivating"
+fi
+
+# Send notification.
+notify-send \
+  "Hyprland Lid Manager" \
+  "Laptop lid is $lid_state: $action internal monitor $monitor_name."
