@@ -35,6 +35,11 @@ set -gx EDITOR nvim
 # Setup tools
 #
 
+# yay
+if type -q yay
+    alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+end
+
 # Git
 if type -q git
     alias gs="git status"
