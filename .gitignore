@@ -2,5 +2,6 @@
 /packages/dot-local/bin/zig
 /packages/dot-local/bin/zls
 /packages/dot-config/fish/*
+/packages/dot-config/hypr/wallpapers/current
 !/packages/dot-config/fish/config.fish
 !/packages/dot-config/fish/fish_plugins
