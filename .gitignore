@@ -1,7 +1,12 @@
 /packages/dot-gitconfig
-/packages/dot-local/bin/zig
-/packages/dot-local/bin/zls
-/packages/dot-config/fish/*
 /packages/dot-config/hypr/wallpapers/current
+
+/packages/dot-local/bin/*
+!/packages/dot-local/bin/getanyzig
+!/packages/dot-local/bin/vim
+!/packages/dot-local/bin/ziginit
+!/packages/dot-local/bin/zs
+
+/packages/dot-config/fish/*
 !/packages/dot-config/fish/config.fish
 !/packages/dot-config/fish/fish_plugins
