@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+state=$(hyprctl hyprsunset gamma)
+
+tr '\n' ' ' << EOF
+{
+  "text": "",
+  "tooltip": "",
+  "class": "",
+  "percentage": $state
+}
+EOF
+

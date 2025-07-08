@@ -18,6 +18,7 @@ $PKG_INSTALL \
   wofi \
   waybar \
   swaync \
+  wlogout \
   pavucontrol brightnessctl playerctl \
   pacman-contrib
 result

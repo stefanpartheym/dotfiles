@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+updates=$(checkupdates)
+
+tr '\n' ' ' << EOF
+{
+  "text": "$(echo "$updates" | wc -l)",
+  "tooltip": "$(echo "$updates" | awk '{printf "%s\\n", $0}')",
+  "class": "",
+  "percentage": 0
+}
+EOF

@@ -1,26 +1,40 @@
+/**
+ *
+ * TODO: Use color variables like this:
+ *  ```css
+ *  // Define color:
+ *  @define-color custom rgb (181, 171, 156);
+ *  ...
+ *  // Use definition:
+ *  #waybar {
+ *    color: @theme_text_color;
+ *  }
+ *  ```
+ *
+ */
+
 * {
-  font-family: "Fira Code";
-  font-size: 16px;
+  font-family: "Fira Code", "Symbols Nerd Font";
+  font-weight: 600;
+  font-size: 14px;
   padding: 0;
 }
 
 #waybar {
   background: transparent;
   color: #c6d0f5;
-  /* color: @theme_text_color; */
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  /* background: @theme_base_color; */
   background: #101010;
   border-radius: 5px;
-  margin: 5px 5px 0px 5px;
+  padding: 0px 10px;
 }
 
 .module {
-  padding: 5px 15px;
+  padding: 5px 5px;
 }
 
 .module:hover {
@@ -28,26 +42,31 @@
 }
 
 #workspaces {
-  padding: 0;
+  padding: 10px 0px;
 }
 
 #workspaces button {
+  min-height: 10px;
+  padding: 0px;
+  margin: 0px 2px;
+  border: none;
+  border-radius: 10px;
   color: #c6d0f5;
-  padding: 5px 15px;
+  background-color: #c6d0f5;
+  background: #c6d0f5;
+  opacity: 0.4;
+  transition: all 1s linear;
+}
+
+#workspaces button label {
+  font-size: 4px;
 }
 
 #workspaces button.active {
-  color: #99d1db;
+  min-width: 30px;
+  opacity: 1;
 }
 
 #workspaces button:hover {
-  color: #ffffff;
-  border-color: #101010;
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
+  opacity: 0.2;
 }

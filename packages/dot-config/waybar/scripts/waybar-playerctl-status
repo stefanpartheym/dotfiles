@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+case $(playerctl status) in
+  "Playing")
+    text=""
+    ;;
+  "Paused")
+    text=""
+    ;;
+  *)
+    text=""
+    ;;
+esac
+
+tooltip="$(playerctl metadata --format "{{ artist }} - {{ title }}")"
+
+test -z "$text" || text="$text $tooltip"
+
+cat << EOF
+{ "text": "$text", "tooltip": "$tooltip", "class": "", "percentage": 0 }
+EOF
