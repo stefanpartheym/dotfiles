@@ -24,7 +24,7 @@ $PKG_INSTALL \
 result
 
 info "Installing theming packages"
-$PKG_INSTALL gnome-themes-extra kvantum-qt5 nwg-look
+$PKG_INSTALL gnome-themes-extra nwg-look
 result
 
 info "Installing clipboard manager"
