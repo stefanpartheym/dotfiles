@@ -47,6 +47,6 @@ info "Installing differ"
 $PKG_INSTALL meld
 result
 
-info "Installing file manager"
-$PKG_INSTALL nautilus
+info "Installing git credential manager"
+$PKG_INSTALL git-credential-manager-bin
 result
