@@ -75,3 +75,11 @@ result
 info "Installing pass (password-store)"
 $PKG_INSTALL pass pass-otp pass-ln browserpass browserpass-chromium
 result
+
+info "Installing compression tools"
+$PKG_INSTALL zip unzip
+result
+
+info "Installing http client"
+$PKG_INSTALL xh
+result
