@@ -47,6 +47,10 @@ info "Installing differ"
 $PKG_INSTALL meld
 result
 
-info "Installing git credential manager"
+info "Installing credentials manager and keyring"
+$PKG_INSTALL gnome-keyring libsecret
+result
+
+info "Installing git credentials manager"
 $PKG_INSTALL git-credential-manager-bin
 result
