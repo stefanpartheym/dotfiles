@@ -12,7 +12,7 @@ case $(playerctl status) in
     ;;
 esac
 
-tooltip="$(playerctl metadata --format "{{ artist }} - {{ title }}")"
+tooltip="$(playerctl metadata --format "{{ title }} – {{ artist }}")"
 
 test -z "$text" || text="$text $tooltip"
 

@@ -97,8 +97,8 @@
     "on-click": "GTK_THEME=Adwaita-dark blueberry",
   },
   "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-scroll-up": "~/.config/hypr/scripts/hypr-workspace-scroller prev",
+    "on-scroll-down": "~/.config/hypr/scripts/hypr-workspace-scroller next",
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
@@ -114,7 +114,7 @@
     "interval": "once",
     "return-type": "json",
     "format": "{icon}",
-    "tooltip-format": "{percentage}%",
+    // "tooltip-format": "{percentage}%",
     "format-icons": {
       "default": [
         "",
@@ -135,6 +135,8 @@
       ],
     },
     "exec": "$HOME/.config/waybar/scripts/waybar-hyprsunset-status",
+    "on-click": "hyprctl hyprsunset temperature 3500; pkill -SIGRTMIN+10 waybar",
+    "on-click-right": "hyprctl hyprsunset temperature 5500; pkill -SIGRTMIN+10 waybar",
     "on-scroll-up": "hyprctl hyprsunset gamma +5; pkill -SIGRTMIN+10 waybar",
     "on-scroll-down": "hyprctl hyprsunset gamma -5; pkill -SIGRTMIN+10 waybar",
     "signal": 10,
@@ -172,7 +174,9 @@
   "custom/pacman": {
     "interval": 3600,
     "return-type": "json",
-    "format": " {}",
+    "format": "<span>󰏗<sup>{}</sup></span>", // 
+    // "format": "󰏗 {}", // 
+    "hide-empty-text": true,
     "exec": "$HOME/.config/waybar/scripts/waybar-archlinux-updates",
     "exec-if": "exit 0",
     // "on-click": "ghostty -e 'echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",

@@ -1,13 +1,9 @@
 #!/usr/bin/env sh
 
-state=$(hyprctl hyprsunset gamma)
+gamma=$(hyprctl hyprsunset gamma)
+tooltip="Temperature: $(hyprctl hyprsunset temperature)\nGamma:       $gamma"
 
-tr '\n' ' ' << EOF
-{
-  "text": "",
-  "tooltip": "",
-  "class": "",
-  "percentage": $state
-}
+cat << EOF
+{ "text": "", "tooltip": "$tooltip", "class": "", "percentage": $gamma }
 EOF
 

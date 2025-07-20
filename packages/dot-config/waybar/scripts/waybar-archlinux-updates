@@ -1,12 +1,13 @@
 #!/usr/bin/env sh
 
-updates=$(checkupdates)
+text=""
+tooltip='""'
+updates=$(checkupdates | column -t)
+if [ -n "$updates" ]; then
+  text="$(echo -ne "$updates\n" | wc -l)"
+  tooltip="$(echo -ne "<small>$updates</small>" | jq -Rs '.')"
+fi
 
-tr '\n' ' ' << EOF
-{
-  "text": "$(echo "$updates" | wc -l)",
-  "tooltip": "$(echo "$updates" | awk '{printf "%s\\n", $0}')",
-  "class": "",
-  "percentage": 0
-}
+cat << EOF
+{ "text": "$text", "tooltip": $tooltip, "class": "", "percentage": 0 }
 EOF
