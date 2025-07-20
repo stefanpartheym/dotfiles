@@ -15,7 +15,7 @@ $PKG_INSTALL ttf-hack ttf-fira-code
 result
 
 info "Installing nerd fonts symbols"
-$PKG_INSTALL ttf-nerd-fonts-symbols
+$PKG_INSTALL ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-mono
 result
 
 info "Installing fonts for emojis support"
