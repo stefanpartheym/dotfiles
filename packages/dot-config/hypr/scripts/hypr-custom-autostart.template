@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+hyprctl dispatch exec "[workspace 1 silent] thunderbird"
+hyprctl dispatch exec "[workspace 1 silent] gnome-calendar"
+hyprctl dispatch exec "[workspace 1 silent] rocketchat-desktop"
+hyprctl dispatch exec "[workspace 3 silent] ghostty"
