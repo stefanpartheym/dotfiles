@@ -6,25 +6,36 @@
 
 # Get the name of the internal monitor (usually eDP-X).
 fallback_monitor_name="eDP-1"
-monitor_name="$(hyprctl monitors all | grep '^Monitor eDP' | awk '{print $2}')"
+monitor_name="$(hyprctl -j monitors all | jq -r '.[] | .name' | grep 'eDP')"
+test -z "$monitor_name" && monitor_name="$fallback_monitor_name"
+
+# Get the internal monitor's disabled state.
+monitor_disabled_state=$(
+  hyprctl -j monitors all \
+    | jq --arg name "$monitor_name" '.[] | select(.name == $name) | .disabled'
+)
 
 # Get current lid state.
 lid_state=$(
-  cat /proc/acpi/button/lid/LID0/state | \
-    cut -d ':' -f 2 | \
-    sed 's/ //g'
+  cat /proc/acpi/button/lid/LID0/state \
+    | cut -d ':' -f 2 \
+    | sed 's/ //g'
 )
 
+
 # Activate or deactivate the internal monitor based on current lid state.
-if [ "$lid_state" = "open" ]; then
+action=""
+if [ "$lid_state" = "open" ] && [ "$monitor_disabled_state" = "true" ]; then
   hyprctl keyword monitor "$monitor_name, preferred, auto, auto"
   action="Activating"
-else
+elif [ "$lid_state" = "closed" ] && [ "$monitor_disabled_state" = "false" ]; then
   hyprctl keyword monitor "$monitor_name, disable"
   action="Deactivating"
 fi
 
-# Send notification.
-notify-send \
-  "Hyprland Lid Manager" \
-  "Laptop lid is $lid_state: $action internal monitor $monitor_name."
+if [ -n "$action" ]; then
+  # Send notification, if an action has been taken.
+  notify-send \
+    "Hyprland Lid Manager" \
+    "Laptop lid is $lid_state: $action internal monitor $monitor_name."
+fi
