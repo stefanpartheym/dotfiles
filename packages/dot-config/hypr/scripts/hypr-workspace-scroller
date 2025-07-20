@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+
+#
+# Hyprland workspace scroller
+#
+# Handles scrolling through workspaces using the mouse wheel and stops scrolling
+# when the first or last workspace is active.
+#
+
+(
+  flock -n 9 || exit 1
+
+  case "$1" in
+
+    # Go to previous workspace.
+    prev)
+      # No fany checks needed, because Hyprland will stop with `r-1`, if the
+      # first workspace is already active.
+      hyprctl dispatch workspace r-1
+      ;;
+
+    # Go to next workspace.
+    next)
+      # Gather information about the current and the last workspace.
+      workspaces=$(hyprctl workspaces -j | jq 'sort_by(.id)')
+      last=$(echo "$workspaces" | jq '.[-1].id')
+      current=$(hyprctl activeworkspace -j | jq '.id')
+      last_is_empty=$(echo "$workspaces" | jq '.[-1].lastwindow == "0x0"')
+      # Make sure, the last workspace is either not active or is empty, to be
+      # able to go to the next workspace.
+      if [ "$current" != "$last" ] || [ "$last_is_empty" == "false" ]; then
+        hyprctl dispatch workspace r+1
+      fi
+      ;;
+
+  esac
+
+  # Debounce: Wait 25ms before releasing the lock to mitigate scroll spam.
+  sleep 0.025
+) 9>/tmp/hypr-workspace-scroller.lock
