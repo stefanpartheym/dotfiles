@@ -83,3 +83,7 @@ result
 info "Installing http client"
 $PKG_INSTALL xh
 result
+
+info "Installing password generator"
+$PKG_INSTALL pwgen
+result
