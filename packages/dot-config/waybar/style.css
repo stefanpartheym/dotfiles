@@ -1,17 +1,9 @@
-/**
- *
- * TODO: Use color variables like this:
- *  ```css
- *  // Define color:
- *  @define-color custom rgb (181, 171, 156);
- *  ...
- *  // Use definition:
- *  #waybar {
- *    color: @theme_text_color;
- *  }
- *  ```
- *
- */
+@define-color theme_primary #dcdfe4;
+@define-color theme_secondary #9ca4b2;
+@define-color theme_accent #ffffff;
+@define-color theme_background #171a1e;
+/* alternative lighter background color */
+/* @define-color theme_background #1f2329; */
 
 * {
   font-family: "Fira Code", "Symbols Nerd Font Mono";
@@ -22,27 +14,30 @@
 
 #waybar {
   background: transparent;
-  color: #c6d0f5;
+  color: @theme_primary;
 }
 
 .modules-left,
 .modules-center,
 .modules-right {
-  background: #101010;
+  background: @theme_background;
   border-radius: 5px;
   padding: 0px 10px;
 }
 
 .module {
   padding: 5px 5px;
+  opacity: 0.8;
 }
 
 .module:hover {
-  color: #ffffff;
+  color: @theme_accent;
+  opacity: 1;
 }
 
 #workspaces {
   padding: 10px 0px;
+  opacity: 1;
 }
 
 #workspaces button {
@@ -51,9 +46,8 @@
   margin: 0px 2px;
   border: none;
   border-radius: 10px;
-  color: #c6d0f5;
-  background-color: #c6d0f5;
-  background: #c6d0f5;
+  background-color: @theme_secondary;
+  background: @theme_secondary;
   opacity: 0.4;
   transition: all 1s linear;
 }
@@ -63,10 +57,14 @@
 }
 
 #workspaces button.active {
+  background-color: @theme_primary;
+  background: @theme_primary;
+  opacity: 0.8;
   min-width: 30px;
-  opacity: 1;
 }
 
 #workspaces button:hover {
-  opacity: 0.2;
+  background-color: @theme_accent;
+  background: @theme_accent;
+  opacity: 1;
 }
