@@ -54,3 +54,7 @@ result
 info "Installing git credentials manager"
 $PKG_INSTALL git-credential-manager-bin
 result
+
+info "Installing GUI text editor"
+$PKG_INSTALL scite
+result
