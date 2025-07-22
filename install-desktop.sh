@@ -19,7 +19,7 @@ $PKG_INSTALL \
   waybar \
   swaync \
   wlogout \
-  pavucontrol brightnessctl gammastep playerctl \
+  wiremix brightnessctl gammastep playerctl \
   pacman-contrib
 result
 
