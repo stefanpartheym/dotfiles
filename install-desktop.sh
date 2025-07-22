@@ -12,14 +12,14 @@ result
 
 info "Installing window manager and tools"
 $PKG_INSTALL \
-  hyprland \
-  hyprsunset hyprpicker hyprshot hyprpaper hyprlock hypridle hyprpolkitagent hyprland-qtutils \
+  hyprland hyprpicker hyprshot hyprpaper hyprlock hypridle hyprpolkitagent \
+  hyprland-qtutils hyprsunset \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt6-wayland qt5-wayland \
   wofi \
   waybar \
   swaync \
   wlogout \
-  pavucontrol brightnessctl playerctl \
+  pavucontrol brightnessctl gammastep playerctl \
   pacman-contrib
 result
 
