@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+current="$(brightnessctl g)"
+max="$(brightnessctl m)"
+
+percentage=$((current * 100 / max))
+
+cat << EOF
+{ "text": "", "tooltip": "", "class": "", "percentage": $percentage }
+EOF

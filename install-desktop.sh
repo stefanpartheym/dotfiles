@@ -18,6 +18,7 @@ $PKG_INSTALL \
   wofi \
   waybar \
   swaync \
+  swayosd \
   wlogout \
   wiremix brightnessctl gammastep playerctl \
   pacman-contrib
