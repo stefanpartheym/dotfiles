@@ -41,7 +41,11 @@ $PKG_INSTALL ghostty
 result
 
 info "Installing file manager"
-$PKG_INSTALL nautilus
+$PKG_INSTALL nautilus sushi ffmpegthumbnailer
+result
+
+info "Installing document viewers (PDF, images, etc.)"
+$PKG_INSTALL evince imv mpv
 result
 
 info "Installing connectivity managers"
@@ -62,4 +66,8 @@ result
 
 info "Installing GUI text editor"
 $PKG_INSTALL scite
+result
+
+info "Installing web browser"
+$PKG_INSTALL brave-bin
 result
