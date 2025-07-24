@@ -40,8 +40,8 @@ info "Installing file manager"
 $PKG_INSTALL nautilus
 result
 
-info "Installing bluetooth manager"
-$PKG_INSTALL blueberry
+info "Installing connectivity managers"
+$PKG_INSTALL impala blueberry
 result
 
 info "Installing differ"

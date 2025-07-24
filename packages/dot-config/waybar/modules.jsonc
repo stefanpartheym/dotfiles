@@ -27,9 +27,12 @@
     "format-wifi": "󰤢",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰤠",
+    "format-linked": "󰌙",
     "tooltip-format": "{ifname}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-linked": "no internet connection ({ifname})",
     "tooltip-format-disconnected": "disconnected",
+    "on-click": "ghostty --title=impala -e impala",
   },
   "cpu": {
     "interval": 1,
@@ -96,7 +99,7 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Connected devices: {num_connections}",
-    "on-click": "GTK_THEME=Adwaita-dark blueberry",
+    "on-click": "blueberry",
   },
   "hyprland/workspaces": {
     "on-scroll-up": "~/.config/hypr/scripts/hypr-workspace-scroller prev",
