@@ -13,19 +13,23 @@ result
 info "Installing window manager and tools"
 $PKG_INSTALL \
   hyprland hyprpicker hyprshot hyprpaper hyprlock hypridle hyprpolkitagent \
-  hyprland-qtutils hyprsunset \
+  hyprland-qtutils \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk qt6-wayland qt5-wayland \
   wofi \
   waybar \
   swaync \
   swayosd \
   wlogout \
-  wiremix brightnessctl gammastep playerctl \
+  wiremix brightnessctl playerctl \
   pacman-contrib
 result
 
 info "Installing theming packages"
 $PKG_INSTALL gnome-themes-extra nwg-look
+result
+
+info "Installing bluelight filter"
+$PKG_INSTALL hyprsunset sunsetr-bin
 result
 
 info "Installing clipboard manager"
