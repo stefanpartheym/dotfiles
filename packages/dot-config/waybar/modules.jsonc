@@ -204,13 +204,12 @@
   "custom/pacman": {
     "interval": 3600,
     "return-type": "json",
-    "format": "<span>󰏗<sup>{}</sup></span>", // 
-    // "format": "󰏗 {}", // 
+    "format": "<span>󰏗<sup>{}</sup></span>",
     "hide-empty-text": true,
     "exec": "$HOME/.config/waybar/scripts/waybar-archlinux-updates",
     "exec-if": "exit 0",
-    // "on-click": "ghostty -e 'echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
-    // "signal": 8,
+    "on-click": "pkill -SIGRTMIN+12 waybar",
+    "signal": 12,
     "tooltip": true,
   },
   "custom/session": {
