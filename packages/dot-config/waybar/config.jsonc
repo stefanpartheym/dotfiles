@@ -23,7 +23,7 @@
     "custom/brightness",
     "custom/notification",
     "group/connectivity",
-    "tray",
+    "group/tray",
     "custom/session",
   ],
 }

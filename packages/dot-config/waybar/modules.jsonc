@@ -222,6 +222,10 @@
     "tooltip": false,
     "format": "|",
   },
+  "custom/tray-group": {
+    "format": "󱊖 ",
+    "tooltip": false,
+  },
 
   // Groups
   "group/hardware": {
@@ -234,12 +238,16 @@
   },
   "group/connectivity": {
     "orientation": "inherit",
-    // "drawer": {},
     "modules": ["network", "bluetooth"],
   },
   "group/power": {
     "orientation": "inherit",
     "drawer": {},
     "modules": ["battery", "power-profiles-daemon"],
+  },
+  "group/tray": {
+    "orientation": "inherit",
+    "drawer": {},
+    "modules": ["custom/tray-group", "tray"],
   },
 }
