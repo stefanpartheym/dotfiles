@@ -1,0 +1,52 @@
+{
+  "buttons": [
+    {
+      "label": "lock",
+      "action": "loginctl lock-session",
+      "text": "",
+      "keybind": "l",
+      "width": 0.5,
+      "height": 0.5
+    },
+    {
+      "label": "logout",
+      "action": "loginctl terminate-user $USER",
+      "text": "󰈆",
+      "keybind": "e",
+      "width": 0.5,
+      "height": 0.5
+    },
+    {
+      "label": "shutdown",
+      "action": "systemctl poweroff",
+      "text": "",
+      "keybind": "s",
+      "width": 0.5,
+      "height": 0.5
+    },
+    {
+      "label": "reboot",
+      "action": "systemctl reboot",
+      "text": "",
+      "keybind": "r",
+      "width": 0.5,
+      "height": 0.5
+    },
+    {
+      "label": "hibernate",
+      "action": "systemctl hibernate",
+      "text": "",
+      "keybind": "h",
+      "width": 0.5,
+      "height": 0.5
+    },
+    {
+      "label": "suspend",
+      "action": "systemctl suspend",
+      "text": "",
+      "keybind": "u",
+      "width": 0.5,
+      "height": 0.5
+    }
+  ]
+}

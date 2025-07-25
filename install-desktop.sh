@@ -19,7 +19,7 @@ $PKG_INSTALL \
   waybar \
   swaync \
   swayosd \
-  wlogout \
+  wleave \
   wiremix brightnessctl playerctl \
   pacman-contrib
 result

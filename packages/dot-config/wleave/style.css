@@ -1,0 +1,40 @@
+/* @define-color theme_primary #dcdfe4; */
+/* @define-color theme_secondary #9ca4b2; */
+/* @define-color theme_accent #ffffff; */
+/* @define-color theme_background #171a1e; */
+
+* {
+  font-family: "Lato", "Symbols Nerd Font Mono";
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: rgba(12, 12, 12, 0.75);
+}
+
+button {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border-width: 0;
+  color: #535965;
+  background-color: #171a1e;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 5rem;
+  opacity: 0.9;
+  outline-style: none;
+  font-size: 8rem;
+}
+
+button:focus,
+button:active,
+button:hover {
+  color: #a0a8b7;
+  background-color: #2d323b;
+}
+
+button:hover {
+  color: #ffffff;
+}
