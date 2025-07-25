@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-zig_version="0.13.0"
+zig_version="0.14.1"
 project_name=$(basename `pwd`)
 
 # Diff file for `build.zig`, when using a simple exe only build.
@@ -251,8 +251,7 @@ EOF
 echo "## zig init ##"
 
 # Initialize project.
-ziege set-version $zig_version
-zig init
+zig $zig_version init
 cat <<EOF > .gitignore
 # zig related
 /.zig-cache/
