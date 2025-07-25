@@ -5,7 +5,7 @@ tooltip='""'
 updates=$(checkupdates | column -t)
 if [ -n "$updates" ]; then
   text="$(echo -ne "$updates\n" | wc -l)"
-  tooltip="$(echo -ne "<small>$updates</small>" | jq -Rs '.')"
+  tooltip="$(echo -ne "<tt><small>$updates</small></tt>" | jq -Rs '.')"
 fi
 
 cat << EOF
