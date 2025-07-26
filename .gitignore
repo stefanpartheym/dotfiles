@@ -1,5 +1,6 @@
 /packages/dot-gitconfig
-/packages/dot-config/hypr/wallpapers/current
+/packages/dot-config/desktop/wallpapers/current
+/packages/dot-config/desktop/scripts/hypr-custom-autostart
 
 /packages/dot-local/bin/*
 !/packages/dot-local/bin/getanyzig
@@ -10,5 +11,3 @@
 /packages/dot-config/fish/*
 !/packages/dot-config/fish/config.fish
 !/packages/dot-config/fish/fish_plugins
-
-/packages/dot-config/hypr/scripts/hypr-custom-autostart

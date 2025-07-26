@@ -12,7 +12,7 @@
   // Spacing between groups
   "spacing": 15,
 
-  "include": ["~/.config/waybar/modules.jsonc"],
+  "include": ["$XDG_CONFIG_HOME/waybar/modules.jsonc"],
 
   "modules-left": ["hyprland/workspaces", "custom/pacman", "custom/music"],
   "modules-center": ["clock"],
