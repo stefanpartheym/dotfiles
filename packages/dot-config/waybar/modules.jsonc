@@ -144,10 +144,9 @@
     "on-scroll-down": "swayosd-client --brightness lower",
   },
   "custom/hyprsunset": {
-    "interval": "once",
+    "interval": 300,
     "return-type": "json",
     "format": "{icon}",
-    // "tooltip-format": "{percentage}%",
     "format-icons": {
       "default": [
         "",
@@ -168,11 +167,10 @@
       ],
     },
     "exec": "$DESKTOP_SCRIPTS_DIR/waybar-hyprsunset-status",
-    "on-click": "hyprctl hyprsunset temperature 3500; pkill -SIGRTMIN+10 waybar",
-    "on-click-right": "hyprctl hyprsunset temperature 5500; pkill -SIGRTMIN+10 waybar",
-    "on-scroll-up": "hyprctl hyprsunset gamma +5; pkill -SIGRTMIN+10 waybar",
-    "on-scroll-down": "hyprctl hyprsunset gamma -5; pkill -SIGRTMIN+10 waybar",
-    "signal": 10,
+    "on-click": "hyprctl hyprsunset temperature 3500",
+    "on-click-right": "hyprctl hyprsunset temperature 5500",
+    "on-scroll-up": "hyprctl hyprsunset gamma +5",
+    "on-scroll-down": "hyprctl hyprsunset gamma -5",
   },
   "custom/notification": {
     "return-type": "json",

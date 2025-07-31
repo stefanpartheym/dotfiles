@@ -20,7 +20,7 @@
     "group/hardware",
     "group/power",
     "pulseaudio",
-    "custom/brightness",
+    "custom/hyprsunset",
     "custom/notification",
     "group/connectivity",
     "group/tray",
