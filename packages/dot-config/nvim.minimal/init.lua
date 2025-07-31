@@ -1,13 +1,15 @@
 --
+-- General
+--
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+--
 -- Options
 --
 
 local opt = vim.opt
-
--- Set <space> as the leader key
--- See `:help mapleader`
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- Make line numbers default
 opt.number = true
@@ -84,3 +86,6 @@ local map = vim.keymap.set
 
 map("n", "<C-y>", "<Cmd>%y+<Cr>", { desc = "Copy current buffer to system clipboard" })
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
+map("n", "<leader>q", ":quit<cr>", { desc = "Quit" })
+map("n", "<S-h>", ":bprev<cr>", { desc = "Previous buffer" })
+map("n", "<S-l>", ":bnext<cr>", { desc = "Next buffer" })
