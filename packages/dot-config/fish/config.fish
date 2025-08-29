@@ -87,6 +87,12 @@ if type -q zoxide
     zoxide init fish | source
 end
 
+# taskwarrior
+if type -q task
+  set -gx TASKRC ~/.config/task/taskrc
+  set -gx TASKDATA ~/.config/task/data
+end
+
 #
 # Load custom config
 #
