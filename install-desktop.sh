@@ -20,6 +20,7 @@ $PKG_INSTALL \
   swaync \
   swayosd \
   wleave \
+  satty \
   wiremix brightnessctl playerctl \
   pacman-contrib
 result
