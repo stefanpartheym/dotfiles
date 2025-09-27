@@ -6,8 +6,29 @@ prefix="$HOME/.local"
 bootstrap_zig_version="zig-linux-x86_64-0.14.0"
 bootstrap_zig_url="https://ziglang.org/download/0.14.0/$bootstrap_zig_version.tar.xz"
 bootstrap_zig_build_dir="/tmp/zig-build"
-anyzig_url="https://github.com/marler8997/anyzig.git"
 build_dir="/tmp/anyzig-build"
+
+# anyzig_url="https://github.com/marler8997/anyzig.git"
+# Currently using pfgithub's fork of anyzig, which includes a fix for zls.
+anyzig_url="https://github.com/pfgithub/anyzig.git"
+# Also, use the branch, which contains the fix.
+anyzig_branch="pfg/fix-zls"
+
+# Patch `build.zig` to also build the zls binary during install step.
+build_zig_patch='
+diff --git a/build.zig b/build.zig
+index 1c8b45a..f4f8155 100644
+--- a/build.zig
++++ b/build.zig
+@@ -80,6 +80,7 @@ pub fn build(b: *std.Build) !void {
+         });
+         setBuildOptions(b, exe, .zls);
+         const install = b.addInstallArtifact(exe, .{});
++        b.getInstallStep().dependOn(&install.step);
+
+         const run = b.addRunArtifact(exe);
+         run.step.dependOn(&install.step);
+'
 
 echo "## getanyzig ##"
 
@@ -23,7 +44,8 @@ echo "Installing anyzig to: $prefix"
 mkdir -p $prefix
 
 rm -rf $build_dir
-git clone $anyzig_url $build_dir
+git clone -b $anyzig_branch $anyzig_url $build_dir
 pushd $build_dir
+echo "$build_zig_patch" | patch -p1
 PATH=$bootstrap_zig_build_dir/$bootstrap_zig_version:$PATH zig build install -p $prefix
 popd
