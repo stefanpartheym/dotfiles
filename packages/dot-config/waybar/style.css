@@ -21,7 +21,7 @@
 .modules-center,
 .modules-right {
   background: @theme_background;
-  border-radius: 5px;
+  border-radius: 6px;
   padding: 0px 10px;
 }
 
