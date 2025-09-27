@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+# Set the monitor offset position.
+monitor_position="0x0"
+
+# Get the name of the internal monitor (usually eDP-X).
+fallback_monitor_name="eDP-1"
+monitor_name="$(hyprctl -j monitors all | jq -r '.[] | .name' | grep 'eDP')"
+test -z "$monitor_name" && monitor_name="$fallback_monitor_name"
+
+# Get the internal monitor's disabled state.
+monitor_disabled_state=$(
+  hyprctl -j monitors all \
+    | jq --arg name "$monitor_name" '.[] | select(.name == $name) | .disabled'
+)
+
+if [ "$monitor_disabled_state" = "true" ]; then
+  hyprctl keyword monitor "$monitor_name, preferred, $monitor_position, auto"
+elif [ "$monitor_disabled_state" = "false" ]; then
+  hyprctl keyword monitor "$monitor_name, disable"
+fi
