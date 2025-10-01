@@ -32,7 +32,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-linked": "no internet connection ({ifname})",
     "tooltip-format-disconnected": "disconnected",
-    "on-click": "ghostty --title=impala -e impala",
+    "on-click": "ghostty --class=com.github.pythops.impala --title=impala -e impala",
   },
   "cpu": {
     "interval": 1,
@@ -79,7 +79,7 @@
       "car": "",
       "default": ["", "", ""],
     },
-    "on-click": "ghostty --title=wiremix -e wiremix",
+    "on-click": "ghostty --class=com.github.tsowell.wiremix --title=wiremix -e wiremix",
     "on-click-right": "swayosd-client --output-volume mute-toggle",
     "on-scroll-up": "swayosd-client --output-volume raise",
     "on-scroll-down": "swayosd-client --output-volume lower",
