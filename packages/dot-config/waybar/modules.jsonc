@@ -167,7 +167,7 @@
       ],
     },
     "exec": "$DESKTOP_SCRIPTS_DIR/waybar-hyprsunset-status",
-    "on-click": "hyprctl hyprsunset temperature 3500",
+    "on-click": "hyprctl hyprsunset temperature 3300",
     "on-click-right": "hyprctl hyprsunset temperature 5500",
     "on-scroll-up": "hyprctl hyprsunset gamma +5",
     "on-scroll-down": "hyprctl hyprsunset gamma -5",
