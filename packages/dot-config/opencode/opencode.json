@@ -4,5 +4,8 @@
     "edit": "ask",
     "bash": "ask",
     "webfetch": "allow"
+  },
+  "tui": {
+    "scroll_speed": 5
   }
 }
