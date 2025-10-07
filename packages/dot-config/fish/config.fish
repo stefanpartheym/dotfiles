@@ -13,6 +13,8 @@ end
 
 # <C-y> Accept completion with
 bind \cy accept-autosuggestion
+# <A-backspace> Backward kill word (without punctuation)
+bind alt-backspace backward-kill-word
 
 #
 # Setup environment
