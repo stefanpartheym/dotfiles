@@ -36,9 +36,9 @@ elif [ "$lid_state" = "closed" ] && [ "$monitor_disabled_state" = "false" ]; the
   action="Disable"
 fi
 
-if [ -n "$action" ]; then
-  # Send notification, if an action has been taken.
-  notify-send \
-    "Hyprland Lid Manager" \
-    "Laptop lid is $lid_state: $action internal monitor $monitor_name."
-fi
+# if [ -n "$action" ]; then
+#   # Send notification, if an action has been taken.
+#   notify-send \
+#     "Hyprland Lid Manager" \
+#     "Laptop lid is $lid_state: $action internal monitor $monitor_name."
+# fi
