@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
-gamma=$(hyprctl hyprsunset gamma)
-tooltip="Temperature: $(hyprctl hyprsunset temperature)\nGamma:       $gamma"
+status_json=$(sunsetr status --json)
+
+gamma=$(echo "$status_json" | jq -r .current_gamma)
+tooltip="Temperature: $(echo "$status_json" | jq -r .current_temp)\nGamma:       $gamma"
 
 cat << EOF
 { "text": "", "tooltip": "$tooltip", "class": "", "percentage": $gamma }
