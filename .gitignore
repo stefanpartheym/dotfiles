@@ -4,6 +4,7 @@
 
 /packages/dot-local/bin/*
 !/packages/dot-local/bin/getanyzig
+!/packages/dot-local/bin/get-bum
 !/packages/dot-local/bin/vim
 !/packages/dot-local/bin/ziginit
 !/packages/dot-local/bin/zs

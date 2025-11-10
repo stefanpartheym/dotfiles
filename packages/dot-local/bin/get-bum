@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+bum_fish_config='# bun (JavaScript runtime)
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+# bum (bun version manager)
+set --export BUM_INSTALL "$HOME/.bum"
+set --export PATH $BUM_INSTALL/bin $PATH
+'
+
+# Install Bum via its install script.
+# NOTE: Overwrite SHELL to avoid the script from adding paths to config.fish.
+curl -fsSL https://github.com/owenizedd/bum/raw/main/install.sh | SHELL= bash
+
+# Create the Bum fish config file.
+bum_fish_config_file="$HOME/.config/fish/conf.d/bum.fish"
+if [ -f "$bum_fish_config_file" ]; then
+  echo "Bum fish config already exists at: $bum_fish_config_file, skipping..."
+else
+  echo "$bum_fish_config" > "$bum_fish_config_file"
+  echo "Created Bum fish config at: $bum_fish_config_file"
+fi
+
