@@ -142,10 +142,10 @@ keybinds clear-defaults=true {
     bind "Alt k" { MoveFocus "Up"; }
 
     // Resize panes
-    bind "Alt H" { Resize "Increase Left"; }
-    bind "Alt J" { Resize "Increase Down"; }
-    bind "Alt K" { Resize "Increase Up"; }
-    bind "Alt L" { Resize "Increase Right"; }
+    bind "Ctrl H" { Resize "Increase Left"; }
+    bind "Ctrl J" { Resize "Increase Down"; }
+    bind "Ctrl K" { Resize "Increase Up"; }
+    bind "Ctrl L" { Resize "Increase Right"; }
     bind "Alt +" { Resize "Increase"; }
     bind "Alt -" { Resize "Decrease"; }
 
@@ -162,15 +162,10 @@ keybinds clear-defaults=true {
     bind "Alt 0" { GoToTab 10; }
 
     // Move panes
-    //
-    // TODO:
-    // Currently not working: Terminal/Zellij does not understand
-    // Ctrl+Shift+X keys.
-    //
-    //bind "Ctrl H" { MovePane "Left"; }
-    //bind "Ctrl J" { MovePane "Down"; }
-    //bind "Ctrl K" { MovePane "Up"; }
-    //bind "Ctrl L" { MovePane "Right"; }
+    bind "Alt H" { MovePane "Left"; }
+    bind "Alt J" { MovePane "Down"; }
+    bind "Alt K" { MovePane "Up"; }
+    bind "Alt L" { MovePane "Right"; }
 
     // Change pane layouts
     bind "Alt <" { PreviousSwapLayout; }
