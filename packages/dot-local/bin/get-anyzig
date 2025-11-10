@@ -30,7 +30,7 @@ index 1c8b45a..f4f8155 100644
          run.step.dependOn(&install.step);
 '
 
-echo "## getanyzig ##"
+echo "## get-anyzig ##"
 
 echo "Installing bootstrap zig compiler"
 
