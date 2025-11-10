@@ -110,7 +110,8 @@ keybinds clear-defaults=true {
     }
   }
   shared_except "locked" {
-    bind "Ctrl g" { SwitchToMode "Locked"; }
+    // Disable lock mode (never used it):
+    // bind "Ctrl g" { SwitchToMode "Locked"; }
     bind "Alt q" { Quit; }
     bind "Alt n" { NewPane; }
     bind "Alt i" { MoveTab "Left"; }
