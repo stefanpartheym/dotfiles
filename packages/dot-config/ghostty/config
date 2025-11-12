@@ -1164,7 +1164,7 @@ keybind = ctrl+shift+w=close_surface
 keybind = super+ctrl+shift+equal=equalize_splits
 keybind = shift+end=scroll_to_bottom
 keybind = ctrl+zero=reset_font_size
-keybind = ctrl+shift+j=write_scrollback_file:paste
+# keybind = ctrl+shift+j=write_scrollback_file:paste
 keybind = ctrl+enter=toggle_fullscreen
 keybind = ctrl+page_up=previous_tab
 keybind = shift+right=adjust_selection:right
@@ -1199,6 +1199,7 @@ keybind = unconsumed:alt+six=unbind
 keybind = unconsumed:alt+seven=unbind
 keybind = unconsumed:alt+eight=unbind
 keybind = unconsumed:alt+nine=unbind
+keybind = unconsumed:ctrl+shift+j=unbind
 
 # Fix sending shift+enter for Claude Code
 keybind = shift+enter=text:\n
