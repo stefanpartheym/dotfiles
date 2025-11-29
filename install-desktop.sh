@@ -50,7 +50,7 @@ $PKG_INSTALL evince imv mpv
 result
 
 info "Installing connectivity managers"
-$PKG_INSTALL impala blueberry
+$PKG_INSTALL impala bluetui
 result
 
 info "Installing differ"

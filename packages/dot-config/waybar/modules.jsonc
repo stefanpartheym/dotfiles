@@ -99,7 +99,7 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Connected devices: {num_connections}",
-    "on-click": "blueberry",
+    "on-click": "ghostty --class=com.github.pythops.bluetui --title=bluetui -e bluetui",
   },
   "hyprland/workspaces": {
     "on-scroll-up": "$DESKTOP_SCRIPTS_DIR/hypr-workspace-scroller prev",
